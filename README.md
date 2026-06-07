@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# jasonruesch.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal website for **Jason Ruesch** — software developer and designer. A fast,
+accessible single-page app deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript**
+- **Vite 8** for dev/build tooling
+- **Tailwind CSS v4** (CSS-first `@theme` tokens in [`src/index.css`](src/index.css) — no config file)
+- **React Router 7** with file-based routing via [`@evolonix/react-router-next`](https://www.npmjs.com/package/@evolonix/react-router-next)
+- **ESLint** + **Prettier** for linting and formatting
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requires the Node version pinned in [`.nvmrc`](.nvmrc) (Node 24). With [nvm](https://github.com/nvm-sh/nvm):
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+nvm use
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server prints a local URL (default http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Script                    | What it does                                           |
+| ------------------------- | ------------------------------------------------------ |
+| `npm run dev`             | Start the Vite dev server with HMR                     |
+| `npm run build`           | Type-check (`tsc -b`) and build to `dist/`             |
+| `npm run preview`         | Serve the production build locally                     |
+| `npm run lint`            | Run ESLint                                             |
+| `npm run format`          | Format all files with Prettier                         |
+| `npm run format:check`    | Verify formatting (CI gate)                            |
+| `npm run typegen`         | Generate route types (runs automatically via prebuild) |
+| `npm run generate:splash` | Regenerate the iOS PWA splash screens                  |
+
+## Routing
+
+Routes are file-based (Next.js-style) under [`src/app/`](src/app/): a folder with a
+`page.tsx` becomes a route, `layout.tsx` wraps its children, and `not-found.tsx`
+handles 404s. Current pages:
+
+- `/` — Home ([`src/app/page.tsx`](src/app/page.tsx))
+- `/about` — About ([`src/app/about/page.tsx`](src/app/about/page.tsx))
+- `/projects` — Projects ([`src/app/projects/page.tsx`](src/app/projects/page.tsx)), driven by the data in [`src/app/projects/_lib/projects.ts`](src/app/projects/_lib/projects.ts)
+- `/contact` — Contact ([`src/app/contact/page.tsx`](src/app/contact/page.tsx))
+
+Reusable UI primitives live in [`src/app/_components/`](src/app/_components/) and
+shared hooks/utilities in [`src/app/_lib/`](src/app/_lib/).
+
+## Deployment
+
+Pushing to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml),
+which installs dependencies, runs `format:check` + `lint` + `build`, and publishes
+`dist/` to GitHub Pages using the official Pages actions. The workflow can also be run
+manually from the Actions tab (`workflow_dispatch`).
+
+[`public/404.html`](public/404.html) plus a redirect snippet in [`index.html`](index.html)
+implement the [SPA fallback for GitHub Pages](https://github.com/rafgraph/spa-github-pages)
+so deep links resolve to client-side routes.
+
+Dependencies and GitHub Actions are kept up to date weekly via
+[Dependabot](.github/dependabot.yml).
