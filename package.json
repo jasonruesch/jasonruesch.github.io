@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
+    "generate:icons": "node scripts/generate-icons.mjs",
     "generate:splash": "node scripts/generate-splash.mjs"
   },
   "dependencies": {
