@@ -20,6 +20,11 @@ const logoSvg = readFileSync(join(pub, "logo.svg"));
 const BG = "#0b0b12";
 const TRANSPARENT = { r: 0, g: 0, b: 0, alpha: 0 };
 
+// Mark coverage: the fraction of the canvas the mark spans. Matches Evolonix's
+// favicon.svg / logo.png, where the mark sits in the central 36 of a 64 box —
+// i.e. 14/64 (≈21.9%) padding on every side.
+const COVERAGE = 36 / 64;
+
 // Render the mark to a transparent square of the given size (aspect preserved).
 const renderMark = (size) =>
   sharp(logoSvg)
@@ -27,13 +32,13 @@ const renderMark = (size) =>
     .png()
     .toBuffer();
 
-// Mark centred on a solid dark square. `coverage` is the fraction of the canvas
-// the mark spans (smaller for maskable icons so they survive the platform crop).
-async function onSquare(size, coverage) {
-  const inner = Math.round(size * coverage);
+// Mark centred on a square `background`, inset to COVERAGE so it carries the
+// same top/bottom padding as the Evolonix marks.
+async function compose(size, background) {
+  const inner = Math.round(size * COVERAGE);
   const offset = Math.round((size - inner) / 2);
   return sharp({
-    create: { width: size, height: size, channels: 4, background: BG },
+    create: { width: size, height: size, channels: 4, background },
   })
     .composite([{ input: await renderMark(inner), top: offset, left: offset }])
     .png()
@@ -41,13 +46,13 @@ async function onSquare(size, coverage) {
 }
 
 const jobs = [
-  // Transparent free-standing mark.
-  [await renderMark(512), "logo.png"],
-  // Apple touch icon — fuller mark; iOS applies its own rounded mask.
-  [await onSquare(180, 0.72), "apple-touch-icon.png"],
+  // General-purpose raster of the mark on a full dark square (matches Evolonix).
+  [await compose(512, BG), "logo.png"],
+  // Apple touch icon — iOS applies its own rounded mask.
+  [await compose(180, BG), "apple-touch-icon.png"],
   // Maskable PWA icons — mark kept within the central safe zone.
-  [await onSquare(192, 0.62), "icon-192.png"],
-  [await onSquare(512, 0.62), "icon-512.png"],
+  [await compose(192, BG), "icon-192.png"],
+  [await compose(512, BG), "icon-512.png"],
 ];
 
 for (const [buf, file] of jobs) {
