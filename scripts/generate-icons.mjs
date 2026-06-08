@@ -56,7 +56,14 @@ const jobs = [
 ];
 
 for (const [buf, file] of jobs) {
-  await sharp(buf).toFile(join(pub, file));
+  // Flatten to opaque RGB and tag sRGB so viewers colour-manage the dark
+  // background correctly (an untagged PNG gets read in the display's wide-gamut
+  // space and renders lighter).
+  await sharp(buf)
+    .flatten({ background: BG })
+    .withIccProfile("srgb")
+    .png()
+    .toFile(join(pub, file));
   console.log(`  ${file}`);
 }
 
