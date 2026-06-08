@@ -56,6 +56,13 @@ export default function About() {
             aria-label="Jason Ruesch at a glance"
             className="rounded-2xl bg-zinc-50 p-6 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-800"
           >
+            <img
+              src="/avatar.png"
+              alt="Jason Ruesch"
+              width={512}
+              height={512}
+              className="mb-6 aspect-square w-full rounded-full object-cover"
+            />
             <div className="flex items-center gap-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
               <img
                 src="/logo.svg"
