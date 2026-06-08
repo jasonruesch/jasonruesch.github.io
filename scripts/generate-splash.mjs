@@ -56,7 +56,7 @@ function buildSvg(W, H) {
   const maxD = Math.max(W, H);
 
   // --- Centered lockup: logo mark stacked above the "Jason Ruesch" wordmark ---
-  const logo = Math.round(S * 0.2); // logo box is square (source viewBox 95.6×95.6)
+  const logo = Math.round(S * 0.2); // logo box is square (source viewBox 64×64)
 
   let fontSize = S * 0.13;
   let bb = font.getPath("Jason Ruesch", 0, 0, fontSize).getBoundingBox();
@@ -72,7 +72,7 @@ function buildSvg(W, H) {
   const originY = (H - totalH) / 2;
 
   const logoX = (W - logo) / 2;
-  const logoScale = logo / 95.6;
+  const logoScale = logo / 64;
 
   // Place the wordmark's glyph top just below the logo (glyph top = baseline + y1, y1 < 0).
   const baseline = originY + logo + gap - bb.y1;
@@ -119,9 +119,9 @@ function buildSvg(W, H) {
   </g>
 
   <g transform="translate(${logoX}, ${originY}) scale(${logoScale})">
-    <rect x="28.7" y="0" width="64" height="12.4" rx="6.2" fill="#a855f7" />
-    <rect x="54.5" y="25.8" width="12.4" height="44" rx="6.2" fill="#d946ef" />
-    <rect x="2.9" y="83.2" width="64" height="12.4" rx="6.2" fill="#22d3ee" />
+    <rect x="17.2" y="0" width="46.8" height="12.4" rx="6.2" fill="#a855f7" />
+    <rect x="34.4" y="25.8" width="12.4" height="12.4" rx="6.2" fill="#d946ef" />
+    <rect x="0" y="51.6" width="46.8" height="12.4" rx="6.2" fill="#22d3ee" />
   </g>
 
   <path transform="translate(${wmX}, 0)" d="${wmPath}" fill="#ffffff" />

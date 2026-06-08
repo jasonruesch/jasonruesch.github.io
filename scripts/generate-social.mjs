@@ -71,7 +71,7 @@ function text(str, x, baseline, fontSize, tracking, fill) {
 
 // --- Logo + wordmark lockup, centred horizontally ---
 const logoSize = 150;
-const logoScale = logoSize / 95.6; // source logo.svg viewBox is 95.6×95.6
+const logoScale = logoSize / 64; // source logo.svg viewBox is 64×64
 const wmSize = 120;
 const wmTracking = -3;
 const gap = 44;
@@ -153,9 +153,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 
   <!-- Brand mark -->
   <g transform="translate(${lockupX.toFixed(1)}, ${logoY.toFixed(1)}) scale(${logoScale.toFixed(4)})">
-    <rect x="28.7" y="0" width="64" height="12.4" rx="6.2" fill="#a855f7" />
-    <rect x="54.5" y="25.8" width="12.4" height="44" rx="6.2" fill="#d946ef" />
-    <rect x="2.9" y="83.2" width="64" height="12.4" rx="6.2" fill="#22d3ee" />
+    <rect x="17.2" y="0" width="46.8" height="12.4" rx="6.2" fill="#a855f7" />
+    <rect x="34.4" y="25.8" width="12.4" height="12.4" rx="6.2" fill="#d946ef" />
+    <rect x="0" y="51.6" width="46.8" height="12.4" rx="6.2" fill="#22d3ee" />
   </g>
 
   <!-- Wordmark + tagline + categories (outlined Manrope 700) -->${wmSvg}${tagSvg}${catSvg}
