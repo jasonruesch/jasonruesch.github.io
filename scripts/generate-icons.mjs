@@ -47,7 +47,7 @@ async function compose(size, background) {
 
 const jobs = [
   // General-purpose raster of the mark on a full dark square (matches Evolonix).
-  [await compose(512, BG), "logo.png"],
+  [await compose(1024, BG), "logo.png"],
   // Apple touch icon — iOS applies its own rounded mask.
   [await compose(180, BG), "apple-touch-icon.png"],
   // Maskable PWA icons — mark kept within the central safe zone.
