@@ -32,6 +32,8 @@ export const PROJECTS: Project[] = [
     tagline: "A reusable component library and token set.",
     body: "An accessible, themeable component library built from design tokens — documented for engineers and designers alike, with a focus on consistency and developer experience.",
     tech: ["React", "TypeScript", "Design Tokens", "Storybook"],
+    live: "https://jasonruesch.dev/design-system",
+    repo: "https://github.com/jasonruesch/design-system",
     tone: "from-emerald-500 to-emerald-400",
   },
   {
@@ -39,6 +41,8 @@ export const PROJECTS: Project[] = [
     tagline: "A full-featured product, front to back.",
     body: "A production web application covering the full frontend stack — authentication, data fetching, state management, and a polished, responsive UI built to scale with the team behind it.",
     tech: ["React", "TypeScript", "REST / GraphQL", "Testing"],
+    live: "https://jasonruesch.dev/web-application",
+    repo: "https://github.com/jasonruesch/web-application",
     tone: "from-blue-500 to-sky-400",
   },
 ];
