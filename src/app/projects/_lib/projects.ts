@@ -29,8 +29,8 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Design System",
-    tagline: "A reusable component library and token set.",
-    body: "An accessible, themeable component library built from design tokens — documented for engineers and designers alike, with a focus on consistency and developer experience.",
+    tagline: "Atelier — a reusable component library and token set.",
+    body: "An accessible, themeable component library built from design tokens: Radix UI primitives styled with Tailwind v4, light/dark and multi-brand theming via CSS variables, and components documented in Storybook and published to npm. It's the foundation the other apps here are built on.",
     tech: ["React", "TypeScript", "Design Tokens", "Storybook"],
     live: "https://jasonruesch.dev/design-system",
     repo: "https://github.com/jasonruesch/design-system",
@@ -38,8 +38,8 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Web Application",
-    tagline: "A full-featured product, front to back.",
-    body: "A production web application covering the full frontend stack — authentication, data fetching, state management, and a polished, responsive UI built to scale with the team behind it.",
+    tagline: "TaskFlow — a full-featured product, front to back.",
+    body: "A production-style task & project manager that exercises the full frontend stack — authentication, filesystem routing, REST and GraphQL data fetching, client/server state separation, and a themeable, responsive UI built on the design system, with tests at every layer.",
     tech: ["React", "TypeScript", "REST / GraphQL", "Testing"],
     live: "https://jasonruesch.dev/web-application",
     repo: "https://github.com/jasonruesch/web-application",
@@ -65,9 +65,10 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Developer Tooling",
-    tagline: "Tooling that smooths the developer workflow.",
-    body: "A command-line tool and supporting libraries that automate repetitive developer tasks — from code generation to release pipelines — with a focus on speed, clear output, and great ergonomics.",
+    tagline: "Cobble — tooling that smooths the developer workflow.",
+    body: "A command-line tool and a set of small, focused libraries that automate repetitive developer tasks — scaffolding code from templates, running project health checks, and cutting releases from conventional commits — with fast, clear, NO_COLOR-aware output. Built as a pnpm + Turborepo monorepo and published to npm.",
     tech: ["Node.js", "TypeScript", "CLI", "Automation"],
+    repo: "https://github.com/jasonruesch/developer-tooling",
     tone: "from-rose-500 to-pink-400",
   },
 ];
