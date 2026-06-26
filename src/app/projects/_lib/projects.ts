@@ -71,4 +71,34 @@ export const PROJECTS: Project[] = [
     repo: "https://github.com/jasonruesch/developer-tooling",
     tone: "from-rose-500 to-pink-400",
   },
+  {
+    name: "@evolonix/react-router-next",
+    tagline: "Next.js-style filesystem routing for React Router 7.",
+    body: "A published npm package that brings Next.js App Router conventions to React Router 7. A Vite plugin discovers your app/ route tree — nested layouts, route groups, and dynamic segments — and generates per-route typed params, so useRouteParams and link generation are fully type-safe. Ships a CLI so non-Vite bundlers (Rsbuild, Webpack) get the same types in prebuild or CI.",
+    tech: ["React Router", "TypeScript", "Vite Plugin", "Type Generation"],
+    live: "https://evolonix.com/react-router-next",
+    repo: "https://github.com/evolonix/react-router-next/tree/main/packages/react-router-next",
+    tone: "from-cyan-500 to-teal-400",
+    // NOTE: this RR-next trio renders adjacently in the 2-col grid — keep these
+    // three accents in distinct hue families (cyan / indigo / lime) so they
+    // don't read as one block.
+  },
+  {
+    name: "create-react-router-next",
+    tagline: "Scaffold a routed React Router 7 app in seconds.",
+    body: "An npm-create scaffolder that spins up a new React Router 7 app preconfigured with @evolonix/react-router-next — wiring up the Vite plugin, an example app/ route tree, and TypeScript so you can start building routes immediately instead of assembling boilerplate.",
+    tech: ["CLI", "TypeScript", "Scaffolding", "React Router"],
+    live: "https://www.npmjs.com/package/create-react-router-next",
+    repo: "https://github.com/evolonix/react-router-next/tree/main/packages/create-react-router-next",
+    tone: "from-indigo-500 to-blue-400",
+  },
+  {
+    name: "eslint-plugin-react-router-next",
+    tagline: "Lint rules that keep your route files honest.",
+    body: "An ESLint plugin that enforces the filesystem-routing conventions of @evolonix/react-router-next — catching misnamed route files, invalid dynamic segments, and other convention slip-ups in the editor and CI, before they ever reach the router.",
+    tech: ["ESLint", "TypeScript", "Linting", "React Router"],
+    live: "https://www.npmjs.com/package/eslint-plugin-react-router-next",
+    repo: "https://github.com/evolonix/react-router-next/tree/main/packages/eslint-plugin-react-router-next",
+    tone: "from-lime-500 to-green-400",
+  },
 ];
