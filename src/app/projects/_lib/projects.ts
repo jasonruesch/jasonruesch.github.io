@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Real-Time Collaboration",
-    tagline: "Coalesce — a multiplayer whiteboard where edits never collide.",
+    tagline: "Coalesce — a multi-user whiteboard where edits never collide.",
     body: "A shared whiteboard where everyone edits the same canvas at once — shapes, sticky notes, and freehand drawing with live cursors and presence. Concurrent edits merge conflict-free via CRDTs, so the board stays consistent even after a client goes offline and reconnects, all synced over WebSockets and built on the design system.",
     tech: ["React", "TypeScript", "WebSockets", "CRDTs"],
     live: "https://coalesce.fly.dev",
