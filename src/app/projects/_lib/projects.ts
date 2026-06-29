@@ -38,9 +38,9 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Web Application",
-    tagline: "TaskFlow — a full-featured product, front to back.",
-    body: "A production-style task & project manager that exercises the full frontend stack — authentication, filesystem routing, REST and GraphQL data fetching, client/server state separation, and a themeable, responsive UI built on the design system, with tests at every layer.",
-    tech: ["React", "TypeScript", "REST / GraphQL", "Testing"],
+    tagline: "TaskFlow — frontend depth, done right.",
+    body: "A production-style task & project manager that goes deep on the front end: filesystem routing, a clean split between server cache and client UI state, optimistic updates, full keyboard and screen-reader accessibility, and a themeable, responsive interface built on the design system — covered by unit, component, and end-to-end tests.",
+    tech: ["React", "TypeScript", "State Management", "Testing"],
     live: "https://jasonruesch.dev/web-application",
     repo: "https://github.com/jasonruesch/web-application",
     tone: "from-blue-500 to-sky-400",
@@ -100,5 +100,14 @@ export const PROJECTS: Project[] = [
     live: "https://www.npmjs.com/package/eslint-plugin-react-router-next",
     repo: "https://github.com/evolonix/react-router-next/tree/main/packages/eslint-plugin-react-router-next",
     tone: "from-lime-500 to-green-400",
+  },
+  {
+    name: "Real-Time Collaboration",
+    tagline: "Coalesce — a multiplayer whiteboard where edits never collide.",
+    body: "A shared whiteboard where everyone edits the same canvas at once — shapes, sticky notes, and freehand drawing with live cursors and presence. Concurrent edits merge conflict-free via CRDTs, so the board stays consistent even after a client goes offline and reconnects, all synced over WebSockets and built on the design system.",
+    tech: ["React", "TypeScript", "WebSockets", "CRDTs"],
+    live: "https://coalesce.fly.dev",
+    repo: "https://github.com/jasonruesch/real-time-collaboration",
+    tone: "from-red-500 to-rose-400",
   },
 ];
