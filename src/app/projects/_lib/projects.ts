@@ -72,6 +72,15 @@ export const PROJECTS: Project[] = [
     tone: "from-rose-500 to-pink-400",
   },
   {
+    name: "Real-Time Collaboration",
+    tagline: "Coalesce — a multi-user whiteboard where edits never collide.",
+    body: "A shared whiteboard where everyone edits the same canvas at once — shapes, sticky notes, and freehand drawing with live cursors and presence. Concurrent edits merge conflict-free via CRDTs, so the board stays consistent even after a client goes offline and reconnects, all synced over WebSockets and built on the design system.",
+    tech: ["React", "TypeScript", "WebSockets", "CRDTs"],
+    live: "https://coalesce.fly.dev",
+    repo: "https://github.com/jasonruesch/real-time-collaboration",
+    tone: "from-yellow-500 to-amber-400",
+  },
+  {
     name: "@evolonix/react-router-next",
     tagline: "Next.js-style filesystem routing for React Router 7.",
     body: "A published npm package that brings Next.js App Router conventions to React Router 7. A Vite plugin discovers your app/ route tree — nested layouts, route groups, and dynamic segments — and generates per-route typed params, so useRouteParams and link generation are fully type-safe. Ships a CLI so non-Vite bundlers (Rsbuild, Webpack) get the same types in prebuild or CI.",
@@ -100,14 +109,5 @@ export const PROJECTS: Project[] = [
     live: "https://www.npmjs.com/package/eslint-plugin-react-router-next",
     repo: "https://github.com/evolonix/react-router-next/tree/main/packages/eslint-plugin-react-router-next",
     tone: "from-lime-500 to-green-400",
-  },
-  {
-    name: "Real-Time Collaboration",
-    tagline: "Coalesce — a multi-user whiteboard where edits never collide.",
-    body: "A shared whiteboard where everyone edits the same canvas at once — shapes, sticky notes, and freehand drawing with live cursors and presence. Concurrent edits merge conflict-free via CRDTs, so the board stays consistent even after a client goes offline and reconnects, all synced over WebSockets and built on the design system.",
-    tech: ["React", "TypeScript", "WebSockets", "CRDTs"],
-    live: "https://coalesce.fly.dev",
-    repo: "https://github.com/jasonruesch/real-time-collaboration",
-    tone: "from-red-500 to-rose-400",
   },
 ];
