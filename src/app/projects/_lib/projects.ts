@@ -81,6 +81,15 @@ export const PROJECTS: Project[] = [
     tone: "from-yellow-500 to-amber-400",
   },
   {
+    name: "Pinochle: Two-Handed",
+    tagline: "A native card duel for iPhone, iPad, Mac, and Apple TV.",
+    body: "A Unity game bringing the classic two-handed pinochle rules to Apple platforms: three AI opponents ranging from an easygoing teacher to a card-counting shark, Game Center quick match and friend invites, and SharePlay to deal in over a FaceTime call. Full controller support and a focus-based interface make it at home on the living-room screen. Currently in App Store review.",
+    tech: ["Unity", "C#", "Game Center", "SharePlay"],
+    live: "https://jasonruesch.dev/pinochle/",
+    repo: "https://github.com/jasonruesch/pinochle",
+    tone: "from-teal-500 to-emerald-400",
+  },
+  {
     name: "@evolonix/react-router-next",
     tagline: "Next.js-style filesystem routing for React Router 7.",
     body: "A published npm package that brings Next.js App Router conventions to React Router 7. A Vite plugin discovers your app/ route tree — nested layouts, route groups, and dynamic segments — and generates per-route typed params, so useRouteParams and link generation are fully type-safe. Ships a CLI so non-Vite bundlers (Rsbuild, Webpack) get the same types in prebuild or CI.",
