@@ -11,6 +11,8 @@ export interface Project {
   live?: string;
   /** Optional link to the source repository. */
   repo?: string;
+  /** Optional array of other links related to the project. */
+  otherLinks?: { icon?: React.ReactNode; label: string; url: string }[];
   /** Tailwind gradient classes for the card's accent bar. */
   tone: string;
 }
@@ -86,8 +88,14 @@ export const PROJECTS: Project[] = [
     body: "A Unity game bringing the classic two-handed pinochle rules to Apple platforms: three AI opponents ranging from an easygoing teacher to a card-counting shark, Game Center quick match and friend invites, and SharePlay to deal in over a FaceTime call. Full controller support and a focus-based interface make it at home on the living-room screen. Currently in App Store review.",
     tech: ["Unity", "C#", "Game Center", "SharePlay"],
     live: "https://jasonruesch.dev/pinochle/",
-    repo: "https://github.com/jasonruesch/pinochle",
     tone: "from-teal-500 to-emerald-400",
+    // otherLinks: [
+    //   {
+    //     icon: <AppleIcon />,
+    //     label: "App Store",
+    //     url: "https://apps.apple.com/pinochle-two-handed/id0000000000",
+    //   },
+    // ],
   },
   {
     name: "@evolonix/react-router-next",

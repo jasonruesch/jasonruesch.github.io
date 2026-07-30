@@ -40,7 +40,9 @@ export default function Projects() {
                 </li>
               ))}
             </ul>
-            {(project.live || project.repo) && (
+            {(project.live ||
+              project.repo ||
+              (project.otherLinks && project.otherLinks.length > 0)) && (
               <div className="mt-5 flex flex-wrap items-center gap-4 text-sm">
                 {project.live && (
                   <AppLink href={project.live} variant="external">
@@ -56,6 +58,18 @@ export default function Projects() {
                     Source
                   </AppLink>
                 )}
+                {project.otherLinks &&
+                  project.otherLinks.length > 0 &&
+                  project.otherLinks.map((link) => (
+                    <AppLink
+                      key={link.url}
+                      href={link.url}
+                      variant="external"
+                      icon={link.icon}
+                    >
+                      {link.label}
+                    </AppLink>
+                  ))}
               </div>
             )}
           </Card>
