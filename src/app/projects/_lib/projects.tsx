@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Pinochle: Two-Handed",
     tagline: "A native card duel for iPhone, iPad, Mac, and Apple TV.",
-    body: "A Unity game bringing the classic two-handed pinochle rules to Apple platforms: three AI opponents ranging from an easygoing teacher to a card-counting shark, Game Center quick match and friend invites, and SharePlay to deal in over a FaceTime call. Full controller support and a focus-based interface make it at home on the living-room screen. Currently in App Store review.",
+    body: "A Unity game bringing the classic two-handed pinochle rules to Apple platforms: three AI opponents ranging from an easygoing teacher to a card-counting shark, Game Center quick match and friend invites, and SharePlay to deal in over a FaceTime call. Full controller support and a focus-based interface make it at home on the living-room screen. Out now on the App Store!",
     tech: ["Unity", "C#", "Game Center", "SharePlay"],
     live: "https://jasonruesch.dev/pinochle/",
     tone: "from-teal-500 to-emerald-400",
