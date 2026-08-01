@@ -1,3 +1,5 @@
+import { AppleIcon } from "../../_components/icons";
+
 export interface Project {
   /** Project name shown as the card heading. */
   name: string;
@@ -89,13 +91,13 @@ export const PROJECTS: Project[] = [
     tech: ["Unity", "C#", "Game Center", "SharePlay"],
     live: "https://jasonruesch.dev/pinochle/",
     tone: "from-teal-500 to-emerald-400",
-    // otherLinks: [
-    //   {
-    //     icon: <AppleIcon />,
-    //     label: "App Store",
-    //     url: "https://apps.apple.com/pinochle-two-handed/id0000000000",
-    //   },
-    // ],
+    otherLinks: [
+      {
+        icon: <AppleIcon />,
+        label: "App Store",
+        url: "https://apps.apple.com/app/pinochle-two-handed/id6759009060",
+      },
+    ],
   },
   {
     name: "@evolonix/react-router-next",
