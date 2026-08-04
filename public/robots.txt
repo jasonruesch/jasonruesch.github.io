@@ -1,0 +1,10 @@
+# https://jasonruesch.dev/
+# This repo serves the apex domain, so this file is the robots.txt for
+# everything under it — including the project sites at /pinochle/ and friends.
+
+User-agent: *
+Allow: /
+
+# Crawlers only look for a sitemap at the domain root, so project sites that
+# ship their own have to be listed here to be discovered.
+Sitemap: https://jasonruesch.dev/pinochle/sitemap.xml
